@@ -107,7 +107,11 @@ public class ClickButtons : MonoBehaviour
         Button clickedButton =
             UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
 
-        if (clickedButton != null && clickedButton.tag == "unSelected")
+        if (
+            clickedButton != null
+            && clickedButton.tag == "unSelected"
+            && computerController.tag != "Untagged"
+        )
         {
             Sprite loadedSprite = Resources.Load<Sprite>(playerController.tag);
             clickedButton.image.sprite = loadedSprite;
