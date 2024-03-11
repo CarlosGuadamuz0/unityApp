@@ -111,23 +111,35 @@ public class ClickButtons : MonoBehaviour
             clickedButton != null
             && clickedButton.tag == "unSelected"
             && computerController.tag != "Untagged"
+
         )
         {
             Sprite loadedSprite = Resources.Load<Sprite>(playerController.tag);
             clickedButton.image.sprite = loadedSprite;
             clickedButton.tag = playerController.tag;
-            List<Button> unselectedButtons = retrieveUnselectButtons();
-            Debug.Log(unselectedButtons.Count);
-            var randomNumber = UnityEngine.Random.Range(0, unselectedButtons.Count);
-            Debug.Log("Random Number:" + randomNumber);
-            Button unselectedButton = unselectedButtons[randomNumber];
-            unselectedButton.image.sprite = Resources.Load<Sprite>(computerController.tag);
-            unselectedButton.tag = computerController.tag;
+			StartCoroutine(SetComputerSelectionAfterDelay(clickedButton));
+
+            
         }
-        else
-        {
-            Debug.LogWarning("No Button component found on the clicked GameObject.");
-        }
+		else
+		{
+			Debug.LogWarning("No Button component found on the clicked GameObject.");
+		}
+		IEnumerator SetComputerSelectionAfterDelay(Button clickedButton)
+		{
+			yield return new WaitForSeconds(1f); // Esperar 1 segundos
+
+			List<Button> unselectedButtons = retrieveUnselectButtons();
+			Debug.Log(unselectedButtons.Count);
+
+			var randomNumber = UnityEngine.Random.Range(0, unselectedButtons.Count);
+			Debug.Log("Random Number:" + randomNumber);
+			Button unselectedButton = unselectedButtons[randomNumber];
+			unselectedButton.image.sprite = Resources.Load<Sprite>(computerController.tag);
+			unselectedButton.tag = computerController.tag;
+		}
+
+		
 
         // Add your logic here for when a button in the grid is clicked
     }
