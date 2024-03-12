@@ -140,7 +140,9 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 1.0.2
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 797403006450860212, guid: c7ddeddd5d2fa994db8c0d38d2ab9069, type: 2}
+  - {fileID: 11400000, guid: 7663d5886eb3ba044a74db8842d04b3a, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -809,11 +811,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: d95750ee-9691-4564-9ebd-aac1b5b888f2
+  cloudProjectId: 76a9338a-b26d-4dac-84f4-a3d671fb9d39
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: My project
-  organizationId: carlosag3003
+  projectName: University
+  organizationId: unity_60529cca300a4ca23fcf
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

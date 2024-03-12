@@ -10,7 +10,7 @@ public class openGameScene : MonoBehaviour
     public void LoadGameScene()
     {
         // Load the new scene named "Game"
-        SceneManager.LoadScene("Game", LoadSceneMode.Single);
+        SceneManager.LoadScene("Login", LoadSceneMode.Single);
         SceneManager.UnloadSceneAsync("MainMenu");
     }
 }
